@@ -149,39 +149,43 @@ export default function Shop() {
 		},
 	];
 	return (
-		<div className="grid w-full px-10 gap-12 ">
-			{categories.map((category) => (
-				<Card key={category.title} className="flex flex-col">
-					<CardHeader>
-						<CardTitle>{category.title}</CardTitle>
-					</CardHeader>
-					<CardContent>
-						<img
-							src={category.image}
-							alt={category.title}
-							className="w-64"
-						/>
-					</CardContent>
-					<CardFooter className="gap-8">
-						{category.subCategories?.map((subCategory) => (
-							<Card
-								key={subCategory.title}
-								className="flex flex-col w-64">
-								<CardHeader>
-									<CardTitle>{subCategory.title}</CardTitle>
-								</CardHeader>
-								<CardContent>
-									<img
-										src={subCategory.image}
-										alt={subCategory.title}
-										className="aspect-square object-scale-down"
-									/>
-								</CardContent>
-							</Card>
-						))}
-					</CardFooter>
-				</Card>
-			))}
+		<div className="flex">
+			<div className="grid w-full px-10 gap-12 ">
+				{categories.map((category) => (
+					<Card key={category.title} className="flex flex-col">
+						<CardHeader>
+							<CardTitle>{category.title}</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<img
+								src={category.image}
+								alt={category.title}
+								className="w-64"
+							/>
+						</CardContent>
+						<CardFooter className="gap-8">
+							{category.subCategories?.map((subCategory) => (
+								<Card
+									key={subCategory.title}
+									className="flex flex-col w-64">
+									<CardHeader>
+										<CardTitle>
+											{subCategory.title}
+										</CardTitle>
+									</CardHeader>
+									<CardContent>
+										<img
+											src={subCategory.image}
+											alt={subCategory.title}
+											className="aspect-square object-scale-down"
+										/>
+									</CardContent>
+								</Card>
+							))}
+						</CardFooter>
+					</Card>
+				))}
+			</div>
 		</div>
 	);
 }
