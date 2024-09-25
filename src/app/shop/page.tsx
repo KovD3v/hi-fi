@@ -149,8 +149,8 @@ export default function Shop() {
 		},
 	];
 	return (
-		<div className="flex">
-			<div className="grid w-full px-10 gap-12 ">
+		<div className="flex w-full">
+			<div className="grid w-full px-10 gap-12 grid-cols-1">
 				{categories.map((category) => (
 					<Card key={category.title} className="flex flex-col">
 						<CardHeader>
